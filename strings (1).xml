@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MinhasObras</string>
+
+    <string name="menu_add">Adicionar</string>
+    <string name="menu_about">Sobre</string>
+    <string name="menu_save">Salvar</string>
+    <string name="menu_clear">Limpar</string>
+    <string name="menu_edit">Editar</string>
+    <string name="menu_delete">Excluir</string>
+
+    <string name="hint_name">Nome da obra</string>
+    <string name="hint_artist">Artista</string>
+    <string name="hint_style">Estilo</string>
+    <string name="hint_type">Tipo</string>
+
+    <string name="toast_empty">Preencha todos os campos!</string>
+    <string name="toast_cleared">Campos limpos!</string>
+    <string name="toast_sort">Ordenação ativada:</string>
+    <string name="toast_selected">Selecionado: %1$s</string>
+
+    <string name="config_title">Configurações</string>
+
+    <string name="about_desc">App para gerenciar obras de arte favoritas.</string>
+
+    <string name="label_artist">Artista: %1$s</string>
+    <string name="label_style">Estilo: %1$s</string>
+    <string name="label_type">Tipo: %1$s</string>
+
+    <string name="author_name">Vithoria Cabreira</string>
+    <string name="author_course">Engenharia da Computação</string>
+    <string name="author_email">vithoria@email.com</string>
+    <string name="university">UTFPR</string>
+
+    <string name="label_ordenar">Ordenar lista alfabeticamente</string>
+
+</resources>

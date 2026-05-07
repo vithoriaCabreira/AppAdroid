@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MinhasObras</string>
+
+    <string name="menu_add">Add</string>
+    <string name="menu_about">About</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_clear">Clear</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+
+    <string name="hint_name">Artwork name</string>
+    <string name="hint_artist">Artist</string>
+    <string name="hint_style">Style</string>
+    <string name="hint_type">Type</string>
+
+    <string name="toast_empty">Fill all fields!</string>
+    <string name="toast_cleared">Fields cleared!</string>
+    <string name="toast_sort">Sorting enabled:</string>
+    <string name="toast_selected">Selected: %1$s</string>
+
+    <string name="config_title">Settings</string>
+
+    <string name="about_desc">App to manage favorite artworks.</string>
+
+    <string name="label_artist">Artist: %1$s</string>
+    <string name="label_style">Style: %1$s</string>
+    <string name="label_type">Type: %1$s</string>
+
+    <string name="author_name">Vithoria Cabreira</string>
+    <string name="author_course">Computer Engineering</string>
+    <string name="author_email">vithoria@email.com</string>
+    <string name="university">UTFPR</string>
+
+    <string name="label_ordenar">Sort list alphabetically</string>
+</resources>
