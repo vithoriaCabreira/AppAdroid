@@ -12,7 +12,7 @@ public class ConfiguracaoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracao);
-        setTitle(R.string.config_title);
+        setTitle(R.string.title_cadastro);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

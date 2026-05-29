@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,7 +36,19 @@ public class ListaObrasActivity extends AppCompatActivity {
 
         registerForContextMenu(listView);
 
-        // Clique simples: Toast internacionalizado
+        // Hook up the buttons from the layout
+        Button btnAdicionar = findViewById(R.id.btnAdicionar);
+        Button btnSobre = findViewById(R.id.btnSobre);
+
+        btnAdicionar.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CadastroActivity.class);
+            startActivityForResult(intent, REQUEST_CADASTRO);
+        });
+
+        btnSobre.setOnClickListener(v -> {
+            startActivity(new Intent(this, SobreActivity.class));
+        });
+
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Obra obra = lista.get(position);
             String msg = getString(R.string.toast_selected, obra.getNome());
@@ -46,7 +59,6 @@ public class ListaObrasActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Sempre verifica a ordenação ao voltar para esta tela
         ordenarLista();
         adapter.notifyDataSetChanged();
     }
@@ -61,7 +73,7 @@ public class ListaObrasActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_lista, menu);
         return true;
     }
 
@@ -73,12 +85,11 @@ public class ListaObrasActivity extends AppCompatActivity {
             Intent intent = new Intent(this, CadastroActivity.class);
             startActivityForResult(intent, REQUEST_CADASTRO);
             return true;
+        } else if (id == R.id.menu_config) {
+            startActivity(new Intent(this, ConfiguracaoActivity.class));
+            return true;
         } else if (id == R.id.menu_sobre) {
             startActivity(new Intent(this, SobreActivity.class));
-            return true;
-        } else if (id == R.id.menu_config) {
-            // Se você criou a tela de configurações separada
-            startActivity(new Intent(this, ConfiguracaoActivity.class));
             return true;
         }
 
@@ -109,33 +120,35 @@ public class ListaObrasActivity extends AppCompatActivity {
         }
     }
 
-    // Menu de contexto para Editar/Excluir
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.menu_contexto, menu);
+        getMenuInflater().inflate(R.menu.menu_contextual, menu);
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int pos = info.position;
+        int id = item.getItemId();
 
-        if (item.getItemId() == R.id.menu_edit) {
+        if (id == R.id.menu_editar) {
             Obra obra = lista.get(pos);
             Intent intent = new Intent(this, CadastroActivity.class);
             intent.putExtra("nome", obra.getNome());
-            intent.putExtra("artista", obra.getArtista());
+            intent.putExtra("artista", obra.getArtistaId());
             intent.putExtra("estilo", obra.getEstilo());
             intent.putExtra("tipo", obra.getTipo());
             intent.putExtra("posicao", pos);
             startActivityForResult(intent, REQUEST_CADASTRO);
             return true;
-        } else if (item.getItemId() == R.id.menu_delete) {
+        } else if (id == R.id.menu_excluir) {
             lista.remove(pos);
             adapter.notifyDataSetChanged();
             return true;
         }
         return super.onContextItemSelected(item);
     }
+
+
 }

@@ -16,12 +16,10 @@
         <activity
             android:name=".ListaObrasActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
@@ -31,6 +29,11 @@
 
         <activity
             android:name=".SobreActivity"
+            android:exported="false"
+            android:parentActivityName=".ListaObrasActivity" />
+
+        <activity
+            android:name=".ConfiguracaoActivity"
             android:exported="false"
             android:parentActivityName=".ListaObrasActivity" />
 

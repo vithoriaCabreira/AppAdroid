@@ -12,7 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastrar Nova Obra"
+            android:text="@string/title_cadastro"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"/>
@@ -21,14 +21,14 @@
             android:id="@+id/etNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome da Obra"
+            android:hint="@string/hint_name"
             android:inputType="textCapSentences" />
 
         <EditText
             android:id="@+id/etArtista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Artista"
+            android:hint="@string/hint_artist"
             android:layout_marginTop="12dp"
             android:inputType="textPersonName" />
 
@@ -36,22 +36,22 @@
             android:id="@+id/etEstilo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Estilo (ex: Barroco)"
+            android:hint="@string/hint_style"
             android:layout_marginTop="12dp" />
 
         <EditText
             android:id="@+id/etTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tipo (ex: Pintura)"
+            android:hint="@string/hint_type"
             android:layout_marginTop="12dp" />
 
         <Button
             android:id="@+id/btnSalvar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Salvar" />
+            android:layout_marginTop="24dp"
+            android:text="@string/menu_save" />
 
     </LinearLayout>
 </ScrollView>

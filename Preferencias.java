@@ -3,6 +3,8 @@ package br.edu.utfpr.vithoriacabreira.minhasobras;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.Collections;
+
 public class Preferencias {
     private static final String NOME = "config_app";
     private static final String ORDENAR = "ordenar";
@@ -16,4 +18,6 @@ public class Preferencias {
         SharedPreferences prefs = context.getSharedPreferences(NOME, Context.MODE_PRIVATE);
         return prefs.getBoolean(ORDENAR, false);
     }
+
+
 }

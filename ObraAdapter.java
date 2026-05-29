@@ -1,5 +1,6 @@
 package br.edu.utfpr.vithoriacabreira.minhasobras;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ public class ObraAdapter extends ArrayAdapter<Obra> {
         super(context, 0, obras);
     }
 
+    @SuppressLint("StringFormatInvalid")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -29,9 +31,16 @@ public class ObraAdapter extends ArrayAdapter<Obra> {
         TextView tvEstilo = convertView.findViewById(R.id.tvEstilo);
         TextView tvTipo = convertView.findViewById(R.id.tvTipo);
 
-        // Usando getString com placeholders para permitir a tradução correta
+        // 1. Busca o Artista no banco de dados usando o artistaId da Obra
+        AppDatabase db = AppDatabase.getInstance(getContext());
+        Artista artista = db.artistaDao().getById(obra.getArtistaId());
+
+        // 2. Garante que o nome não fique vazio se der algum erro
+        String nomeDoArtista = (artista != null) ? artista.getNome() : "Desconhecido";
+
         tvNome.setText(obra.getNome());
-        tvArtista.setText(getContext().getString(R.string.label_artist, obra.getArtista()));
+        // 3. Usa a variável nomeDoArtista em vez do antigo getArtista()
+        tvArtista.setText(getContext().getString(R.string.label_artist, nomeDoArtista));
         tvEstilo.setText(getContext().getString(R.string.label_style, obra.getEstilo()));
         tvTipo.setText(getContext().getString(R.string.label_type, obra.getTipo()));
 
