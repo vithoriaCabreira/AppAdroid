@@ -17,16 +17,6 @@ O objetivo do aplicativo é permitir que o usuário cadastre, visualize e gerenc
 
 ---
 
-## 📸 Capturas de Tela
-
-> Adicione aqui imagens do aplicativo.
-
-| Tela Inicial | Cadastro | Lista |
-|--------------|-----------|-------|
-| ![](docs/home.png) | ![](docs/cadastro.png) | ![](docs/lista.png) |
-
----
-
 ## 🛠 Tecnologias Utilizadas
 
 - Java
